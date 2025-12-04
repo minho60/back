@@ -1,11 +1,12 @@
-
+// index.js 는 리액트의 입구이다.
 import ReactDOM from 'react-dom/client';
 // import App from './App';
+import './index.css';
 
 
 
 function App2() {
-  return <h1> hello CRA </h1>;
+  return <h1 className='txtcolor'> hello CRA </h1>;
 
 }
 

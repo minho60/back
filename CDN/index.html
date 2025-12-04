@@ -2,163 +2,207 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My To Do List</title>
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Google Fonts: Noto Sans KR -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
     <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #f8f9fa;
+        .box_office {
+            display: flex;
+            gap: 40px;
         }
 
-        .todo-container {
-            max-width: 940px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        .box_office_card {
+            position: relative;
+            width: 245px;
+            border-radius: 5px;
+            overflow: hidden;
         }
 
-        @media (max-width: 992px) {
-            .todo-container {
-                max-width: 700px;
-            }
+        /* 앞면 */
+        .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            text-shadow: 2px 2px 2px #000;
         }
 
-        @media (max-width: 768px) {
-            .todo-container {
-                max-width: 100%;
-                margin: 20px 30px;
-            }
+        .screen_type {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
         }
 
-        /* 높이, 너비 통일용 클래스 */
-        .equal-height {
-            height: 40px;
+        .grade {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 28px;
         }
 
-        .equal-width {
-            min-width: 100px;
+        /* 뒷면 */
+        .score {
+            position: absolute;
+            width: calc(100% - 48px);
+            text-align: center;
+            bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 8px;
+        }
+
+        .score span {
+            color: #037B94;
+            font-size: 1.5rem;
+            margin-left: 16px;
+        }
+
+        /* 좋아요 버튼 */
+        .btn {
+            display: flex;
+            gap: 8px;
+        }
+
+        .like {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            height: 34px;
+            width: 100px;
+            margin-top: 8px;
+            padding: 0 5px;
+        }
+
+        .like i {
+            margin-right: 4px;
+        }
+
+        .reservation_link {
+            background: #037B94;
             width: 100%;
-            max-width: 120px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 6px;
+            margin-top: 8px;
+        }
+
+        /* y축 회전 */
+        .inner {
+            position: relative;
+            height: 352px;
+            /* 원근감 */
+            perspective: 1000px;
+        }
+
+        .inner:hover {
+            cursor: pointer;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: .5s;
+            transform-style: preserve-3d;
+        }
+
+        .front {
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            padding: 24px;
+            color: #fff;
+            background: rgb(0, 0, 0, 0.8);
+            /* 뒷 면 숨기기 */
+            backface-visibility: hidden;
+        }
+
+        /* 호버시 뒤집기 */
+        .inner:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .inner:hover .back {
+            transform: rotateY(360deg);
         }
     </style>
 </head>
 
 <body>
+
     <div id="root"></div>
 
+     <!-- Font Awesome CDN (하트 아이콘) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- React CDN -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.8/babel.min.js"></script>
+    <script src="js/data.js" ></script>
 
-    <!-- React Code -->
+
     <script type="text/babel">
-        const { useState } = React;
 
         function App() {
             return (
-                <div>
-                    <ToDoApp />
+                <div className="box_office">
+                    <BoxOfficeCard />
+                    <BoxOfficeCard />
+                    <BoxOfficeCard />
+                    <BoxOfficeCard />
                 </div>
             );
         }
-
-        function ToDoApp() {
-            const [tasks, setTasks] = React.useState([]);
-            const [input, setInput] = React.useState("");
-
-            const addTask = () => {
-                if (input.trim() === "") return;
-                setTasks([...tasks, input.trim()]);
-                setInput("");
-            };
-
-            const handleKeyDown = (e) => {
-                if (e.key === "Enter") {
-                    addTask();
-                }
-            };
-
-            // 삭제 함수는 부모에서 정의
-            // array.filter((element, [index], [array])=>{return 값;}); 
-            // 배열에서 조건에 맞는 요소들만 걸러내어 새로운 배열을 만든다.
-            // _는 요소 값(task)를 사용하지 않을 때 흔히 쓰는 변수명
-            const deleteTask = (index) => {
-                setTasks(tasks.filter((_, i) => i !== index));
-            };
+        function BoxOfficeCard(props) {
             return (
-                <div className="todo-container">
-                    <h2 className="text-center mb-4">
-                        <i className="fa-solid fa-list-ul text-primary me-3"></i>
-                        <strong>Todo List</strong>
-                    </h2>
-
-                    <div className="row g-2 align-items-stretch mb-4">
-                        <div className="col-sm-9 col-12">
-                            <input
-                                type="text"
-                                className="form-control equal-height"
-                                placeholder="할 일을 입력하세요"
-                                value={input}
-                                onChange={(e) => setInput(e.target.value)}
-                                onKeyDown={handleKeyDown}
-                            />
+                <div className="box_office_card">
+                    <div className="inner">
+                        <div className="front">
+                            <span className="rank">1</span>
+                            <div className="poster">
+                                <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="주토피아" />
+                            </div>
+                            <div className="screen_type">
+                                <img src="images/type_mega_mx4d.png" alt="Mega MX4D" />
+                                <img src="images/type_dolbycinema.png" alt="Dolby Cinema" />
+                                <img src="images/type_dolbyatmos.png" alt="Dolby Atmos" />
+                            </div>
+                            <div className="grade">
+                                <img src="images/ALL_56x56.png" alt="Movie Grade All" />
+                            </div>
                         </div>
-                        <div className="col-sm-3 col-12 d-grid">
-                            <button
-                                className="btn btn-primary equal-height equal-width"
-                                onClick={addTask}
-                            >
-                                추가
-                            </button>
+                        <div className="back">
+                            <p>더 화려해진 세계, 더 넓어진 주토피아!<br />디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br /><br />미스터리한 뱀 '게리'가 나타난 순간.</p>
+                            <div className="score">관람평<span>9.3</span></div>
                         </div>
                     </div>
-
-                    {/* 삭제 함수도 같이 전달 */}
-                    <ListGroup tasks={tasks} onDelete={deleteTask} />
+                    <div className="btn">
+                        <button type="button" className="like">
+                            <i className="fa-solid fa-heart"></i>
+                        </button>
+                        <a href="https://www.megabox.co.kr/booking" className="reservation_link">예매</a>
+                    </div>
                 </div>
             );
         }
 
-
-        function ListGroup({ tasks, onDelete }) {
-            return (
-                <ul className="list-group">
-                    {tasks.map((task, index) => (
-                        <li
-                            key={index}
-                            className="list-group-item d-flex justify-content-between align-items-center"
-                        >
-                            <span className="me-3">{task}</span>
-                            <button
-                                className="btn btn-danger btn-sm equal-height equal-width"
-                                onClick={() => onDelete(index)}
-                            >
-                                삭제
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            );
-        }
-
-
+        // 렌더링
         const root = ReactDOM.createRoot(document.getElementById("root"));
         root.render(<App />);
+
     </script>
+   
 </body>
 
 </html>
