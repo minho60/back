@@ -69,6 +69,33 @@ function Create(props) {
   )
 }
 
+function Update(props){
+  const[title, setTitle]= useState(props.title)
+  const[body, setBody]= useState(props.body)
+  return(
+    <article>
+      <h2>Update</h2>
+      <form onSubmit={e=>{
+        e.preventDefault();
+        const title = e.target.title.value;
+        const body = e.target.body.value;
+        props.onUpdate(title,body);
+      }} >
+        <p><input type="text" name="title" placeholder="title" value={title} onChange={e=>{
+          console.log(e.target.value);
+          setTitle(e.target.value);
+          }}/></p>
+        <p><textarea name="body" placeholder="body" value={body} onChange={e=>{
+          console.log(e.target.value);
+          setBody(e.target.value);
+          }} ></textarea></p>
+        <p><input type="submit" value="Update" /></p>
+      </form>
+    </article>
+  )
+};
+
+
 
 function App() {
   // const _mode = useState('WELCOME');
@@ -86,8 +113,11 @@ function App() {
     {id:4, title:'jQuery', body:'jQuery is ...'}
   ])
   let content = null;
+  let contentControl =  null;
+
   if(mode ==='WELCOME'){
     content =  <Article title="Welcome" body="hello,Web"></Article>
+
   } else if(mode ==='READ'){
     let title, body =null;
     for (let i = 0; i < topics.length; i++) {
@@ -97,6 +127,11 @@ function App() {
       }
     } 
     content =  <Article title={title} body={body}></Article>
+    contentControl =  <li><a href={"/update/"+id} onClick={e=>{
+      e.preventDefault();
+      setMode('UPDATE');
+
+    }}>Update</a></li>
   } else if(mode ==='CREATE'){
     content = <Create onCreate={(title, body)=>{
       const newTopic = {id:nextId, title:title, body:body};
@@ -114,6 +149,29 @@ function App() {
       setId(nextId);
       setNextId(nextId+1);
     }}></Create>
+  } else if (mode === 'UPDATE'){
+      let title, body =null;
+    for (let i = 0; i < topics.length; i++) {
+      if(topics[i].id === id){
+      title= topics[i].title;
+      body= topics[i].body;
+      }
+    }
+    content = <Update title={title} body={body} onUpdate={(title, body)=>{
+      const newTopics = [...topics];
+      const updateTopic = {id:id, title:title, body:body};
+
+      for(let i=0; i<newTopics.length; i++){
+        if(newTopics[i].id === id ){
+          newTopics[i] = updateTopic;
+          break;
+        }
+      }
+    setTopics(newTopics);
+    setMode("READ");
+    
+
+    }}></Update>
   }
 
   return (
@@ -128,11 +186,17 @@ function App() {
       {/* 아티클 */}
      {content}
 
-    {/* 생성(create) = 추가(Insert) 버튼 */}
-    <a href="/create" onClick={e=>{
-      e.preventDefault();
-      setMode('CREATE')
-    }}>Create</a>
+    <ul>
+      {/* 생성(create) = 추가(Insert) 버튼 */}
+      <li>
+        <a href="/create" onClick={e=>{
+          e.preventDefault();
+          setMode('CREATE')
+        }}>Create</a>
+      </li>
+        {/* 갱신(update) 버튼 */}
+     {contentControl}
+    </ul>
     </div>
   )
 }
