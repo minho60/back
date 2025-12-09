@@ -19,7 +19,7 @@ public class Ex04_long정수 {
 	public static void main(String[] args) {
 		
 		// 찾기/바꾸기: ctrl+F
-		// alt+shift+a
+		// alt+shift+a -> 다중 커서 편집 상태에서 Shift+방향키로 다중커서 생성 후 수정
 		long var1 = -128;
 		long var2 = -30;
 		long var3 = 0;
