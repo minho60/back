@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class KeyControlExample {
 	public static void main(String[] args) {
+		// 참조 타입: string, 클래스 ...
+		// new 키워드로 생성한 객체를 특별히 instance(인스턴스)
+		// Scanner()생성자 함수를 통해 scanner인스턴스 사용
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
 		int speed = 0;
