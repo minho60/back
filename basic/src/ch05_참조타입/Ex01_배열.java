@@ -1,4 +1,4 @@
-package ch05;
+package ch05_참조타입;
 
 /**
  * 데이터 타입

@@ -1,4 +1,4 @@
-package ch05;
+package ch05_참조타입;
 
 public class Ex03_문자열 {
 

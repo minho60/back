@@ -1,4 +1,4 @@
-package ch05;
+package ch05_참조타입;
 
 /**
  *  문자열 메서드

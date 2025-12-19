@@ -1,4 +1,4 @@
-package ch05.sec12;
+package ch05_참조타입;
 
 
 /**
