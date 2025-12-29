@@ -7,6 +7,8 @@ package ch08_인터페이스.ex01_인터페이스;
  * 		[접근제한자] class 클래스명 implements 인터페이스명 {...}
  *
  */
+// 인터페이스에서 정의한 추상 메서드를 반드시 재정의해야한다.
+// -> 다형성
 public class Audio implements RemoteControl {
 	@Override
 	public void turnOn() {
