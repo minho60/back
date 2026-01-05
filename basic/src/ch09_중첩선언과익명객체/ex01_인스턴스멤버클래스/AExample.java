@@ -1,4 +1,4 @@
-package ch09_중첩.ex01_인스턴스멤버클래스;
+package ch09_중첩선언과익명객체.ex01_인스턴스멤버클래스;
 
 public class AExample {
 	public static void main(String[] args) {
