@@ -2,8 +2,17 @@ package ch11_base모듈.sec02_System;
 
 import java.util.Properties;
 import java.util.Set;
-
-public class GetPropertyExample {
+/**
+ * System Property?
+ * 	- 자바 프로그램이 시작될 때 자동 설정되는 시스템의 속성을 말한다.
+ *  - 예) 운영체제의 종류 및 사용자 정보, 자바 버전 등의 기본 사용 정보가 해당된다.
+ *  
+ * System.getProperty()
+ *  - JVM의 시스템 프로퍼티(System Property)를 조회
+ * System.getProperties()
+ *  - JVM의 모든 시스템 프로퍼티(System Properties)를 한 번에 반환
+ */
+public class Ex05_getProperty메서드 {
 	public static void main(String[] args) {
 		//운영체제와 사용자 정보 출력
 		String osName = System.getProperty("os.name");

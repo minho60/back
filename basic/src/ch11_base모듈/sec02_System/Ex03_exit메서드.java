@@ -1,6 +1,6 @@
 package ch11_base모듈.sec02_System;
 
-public class ExitExample {
+public class Ex03_exit메서드 {
 	public static void main(String[] args) {
 		for(int i=0; i<10; i++) {
 			//i값 출력

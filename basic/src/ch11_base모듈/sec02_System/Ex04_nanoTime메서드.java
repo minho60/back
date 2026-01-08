@@ -1,6 +1,10 @@
 package ch11_base모듈.sec02_System;
 
-public class MeasureRunTimeExample {
+/**
+ * System.nanoTime();
+ *  - 10의 -9승 초 단위로 진행된 시간 반환 
+ */
+public class Ex04_nanoTime메서드 {
 	public static void main(String[] args) {
 		long time1 = System.nanoTime();
 		int sum = 0;

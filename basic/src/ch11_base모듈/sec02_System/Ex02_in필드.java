@@ -1,5 +1,12 @@
 package ch11_base모듈.sec02_System;
 
+/**
+ * system 클래스의 in필드
+ *  - 키보드 입력
+ *  
+ *   	int 변수 = System.in.read();
+ *   
+ */
 public class Ex02_in필드 {
 	public static void main(String[] args) throws Exception {
 		int speed = 0;
@@ -7,6 +14,14 @@ public class Ex02_in필드 {
 
 		while(true) {
 			//Enter 키를 읽지 않았을 경우에만 실행
+			/*
+			 *  enter	13
+			 *  A 		65
+			 *  a		97
+			 *  0		48	
+			 * 
+			 * 
+			 */
 			if(keyCode != 13 && keyCode != 10) {
 				if (keyCode == 49) { 				//숫자 1 키를 읽었을 경우
 					speed++;
@@ -20,12 +35,12 @@ public class Ex02_in필드 {
 				System.out.println("-----------------------------");
 				System.out.println("현재 속도= " + speed);
 				System.out.print("선택: ");
-			}
+			} //if.end
 			
 			//키를 하나씩 읽음
 			keyCode = System.in.read();
 		}
 		
 		System.out.println("프로그램 종료");
-	}
+	}// while.end
 }
