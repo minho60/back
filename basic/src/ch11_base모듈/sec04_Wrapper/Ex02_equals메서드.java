@@ -14,7 +14,7 @@ package ch11_base모듈.sec04_Wrapper;
  * 대신 equals() 메서드로 내부 값을 비교할 수 있다.
  * -> 포장 클래스의 equals() 메서드는 내부의 값을 비교하도록 재정의되어 있다.
  */
-public class ex02_equals메서드 {
+public class Ex02_equals메서드 {
 	public static void main(String[] args) {
 		//-128~127 초과값일 경우
 		Integer obj1 = 300;

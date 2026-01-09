@@ -29,7 +29,7 @@ package ch11_base모듈.sec04_Wrapper;
  *  - Integer 객체가 가지고 있는 값을 기본 타입 int로 꺼내는 메서드
  *    
  */
-public class ex01_integer메서드 {
+public class Ex01_integer메서드 {
 	public static void main(String[] args) {
 		//Boxing
 		Integer obj = 100;

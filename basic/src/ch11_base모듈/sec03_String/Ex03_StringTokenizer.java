@@ -27,7 +27,7 @@ import java.util.StringTokenizer;
  *  	String nextToken(): 문자열을 하나씩 가져옴
  * 
  */
-public class ex03_StringTokenizer {
+public class Ex03_StringTokenizer {
 	public static void main(String[] args) {
 		String data1 = "홍길동&이수홍,박연수";
 		String[] arr = data1.split("&|,");

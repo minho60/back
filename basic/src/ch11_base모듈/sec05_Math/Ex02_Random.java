@@ -33,7 +33,7 @@ import java.util.Random;
  *    	int nextInt(int n): int 타입의 난수 리턴(0<=~<n)
  *   
  */
-public class ex02_Random {
+public class Ex02_Random {
 	public static void main(String[] args) {
 		//선택번호
 		int[] selectNumber = new int[6];

@@ -16,7 +16,7 @@ package ch11_base모듈.sec05_Math;
  *   	Math.round(5.7)				6
  *   
  */
-public class ex01_Math {
+public class Ex01_Math {
 	public static void main(String[] args) {
 		//큰 정수 또는 작은 정수 얻기
 		double v1 = Math.ceil(5.3);

@@ -13,7 +13,7 @@ package ch11_base모듈.sec03_String;
  *    String toString(): 완성된 문자열 리턴
  *    
  */
-public class ex02_StringBuilder {
+public class Ex02_StringBuilder {
 	public static void main(String[] args) {
 		// 메서드 체이닝 패턴 방식
 		String data = new StringBuilder()
