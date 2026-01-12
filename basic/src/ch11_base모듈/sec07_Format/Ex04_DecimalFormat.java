@@ -1,4 +1,4 @@
-package ch11_base모듈.sec07_format;
+package ch11_base모듈.sec07_Format;
 
 import java.text.DecimalFormat;
 /**
