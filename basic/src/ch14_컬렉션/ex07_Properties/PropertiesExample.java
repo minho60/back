@@ -1,7 +1,23 @@
 package ch14_컬렉션.ex07_Properties;
 
 import java.util.Properties;
-	
+/**
+ * Properties
+ * 	- Hashtable의 자식 클래스이다.
+ *  - 키와 값을 String 타입으로 제한한 컬렉션이다.
+ *  - 주로 확장자가 .properties인 프로퍼티 파일을 읽을 때 사용한다.
+ *
+ * 프로퍼티 파일
+ *  - 키와 값이 =기호로 연결되어 있는 텍스트 파일이다.
+ *  - 일반 텍스트 파일과 다르게 ISO 8859-1 문자셋으로 저장되며,
+ *    한글일 경우에는 \\u+유니코드로 표현되어 저장된다.
+ *    
+ * 객체 생성 후
+ * 		Properties properties = new Properties();
+ * load() 메서드로 프로퍼티 파일의 내용을 메모리로 로드한다.
+ * 		properties.load(Xxx.class.getResourceAsStream("database.properties"));
+ * 
+ */
 public class PropertiesExample {
 	public static void main(String[] args) throws Exception {
 		//Properties 컬렉션 생성

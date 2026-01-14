@@ -5,6 +5,7 @@ import java.util.*;
 public class HashSetExample2 {
 	public static void main(String[] args) {
 		//HashSet 컬렉션 생성
+		// 초기용량(Intial Capacity):16-> 2배씩 증가
 		Set<Member> set = new HashSet<Member>();
 
 		//Member 객체 저장
