@@ -3,7 +3,17 @@ package ch16_스트림.ex06_최종처리;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
-
+/**
+ * Optional 클래스
+ * 	- Optional, OptionalDouble, OptionalInt, OptionalLong 클래스는
+ *    집계값만 저장하는 것이 아니라, 집계값이 존재하지 않을 경우 디폴트 값을 설정하거나,
+ *    집계값을 처리하는 Consumer를 등록할 수 있다.
+ *    
+ *    1. isPresent(): 집계값이 있는지 여부
+ *    2. orElse(디폴트값): 집계값이 없을 경우 디폴트 값 설정
+ *    3. ifPresent(): 집계값이 있을 경우 Consumer에서 처리
+ *    
+ */
 public class 집계2 {
 	public static void main(String[] args) {
 		List<Integer> list = new ArrayList< >();

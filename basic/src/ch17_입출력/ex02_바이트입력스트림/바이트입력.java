@@ -1,4 +1,4 @@
-package ch18.sec03.exam01;
+package ch17_입출력.ex02_바이트입력스트림;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,10 +22,10 @@ import java.io.InputStream;
  *  
  */
 // C:/Temp/test1.db에 저장한 내용을 1byte씩 끝까지 읽는다.
-public class ReadExample {
+public class 바이트입력 {
 	public static void main(String[] args) {
 		try {
-			InputStream is = new FileInputStream("C:/Temp/test1.db");
+			InputStream is = new FileInputStream("C:/kmh/git/back/basic/src/ch17_입출력/temp/test1.db");
 
 			while(true) {
 				int data = is.read();
