@@ -1,4 +1,4 @@
-package ch17_입출력.ex01_바이트출력스트림;
+package ch17_IO.ex01_바이트출력스트림;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
