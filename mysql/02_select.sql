@@ -266,6 +266,14 @@ GROUP BY grade HAVING count(*) >= 2;
 
 /*
     서브쿼리
+    1. 반드시 괄호로 감싼다.
+    2. 안쪽 쿼리(서브쿼리)가 먼저 실행된다.
+    3. select, from, where 증 여러 위치에서 사용된다.
+    4. 스칼라 서브퉈리 -> select 절의 서브쿼리
+    5. 인라인 뷰 -> from 절의 서브쿼리
+    6. AS 절: 별칭(Alias) 부여
+        - 테이블의 별칭은 생략 권장, 컬럼의 별칭은 사용 권장(관례)
+
       SELECT 컬럼
       FROM 테이블
       WHERE 컬럼 = (SELECT 문장);
@@ -281,11 +289,67 @@ GROUP BY grade HAVING count(*) >= 2;
 
 
 -- 16. 평균 포인트 이상인 회원을 조회하시오.
-SELECT
+-- 기록순서: SELECT 절 -> FROM 절 -> WHERE 절
+-- 실행순서: FROM 절 -> WHERE절 -> SELECT 절
+-- member 테이블로부터 point가 평균(member테이블로 부터 point의 평균을 조회한다.)
+-- 이상인 모든  컬럼을 조회한다.
+SELECT * FROM member
+WHERE point >= (SELECT AVG(point) FROM member);
 
+
+INSERT INTO orders VALUES
+(1,1,120000,'주문완료','2025-01-01'),
+(2,2,50000,'취소','2023-01-01'),
+(3,3,0,'취소','2024-01-01'),
+(4,5,300000,'주문완료','2025-02-01');
 -- orders 테이블
 -- 17. 주문을 한 회원의 정보만 조회하시오.
--- 18. 주문 정보와 회원 이름을 함께 조회하시오.
--- 19. 주문이 없는 회원도 포함하여 조회하시오.
--- 20. 주문 상태의 종류를 중복 없이 조회하시오.
+SELECT * FROM orders;
 
+SELECT * FROM member
+WHERE member_id IN(SELECT member_id FROM orders);
+
+
+
+/*
+    조인(join) 
+      - 둘 이상의 테이블을 연결
+      - 키(KEY): PK(기본키), FK(외래키)
+
+
+    1. inner join(내부조인)
+    2. 외부조인
+      - Left outer join 왼쪽 외부조인
+      - Light outer join 오른쪽 외부조인
+
+    SELECT 컬럼
+    FROM 테이블A [INNER]JOIN 테이블B 
+    [ON 조인조건]
+    WHERE 조건
+
+*/
+-- 18. 주문 정보와 회원 이름을 함께 조회하시오.
+-- 이름, 주문번호, 총 가격만 출력
+SELECT * FROM orders;
+
+SELECT name, order_id, total_price
+FROM member join orders
+ON member.member_id = orders.order_id;
+-- 19. 주문이 없는 회원도 포함하여 조회하시오.
+SELECT m.member_id, m.name, o.order_id, o.total_price
+FROM member m LEFT JOIN orders o
+ON m.member_id = o.member_id; 
+
+/*
+    SELECT 컬럼1, DISTINCT 컬럼2, ...
+    FROM 테이블1
+    JOIN 테이블 2 ON 조인조건
+    WHERE 조건
+    GROUP BY 컬럼 HAVING 그룹조건
+    ORDER BY 컬럼 ASC|DESC
+    LIMIT 행수;
+
+*/
+
+-- 20. 주문 상태의 종류를 중복 없이(distinct) 조회하시오.
+SELECT DISTINCT status FROM  orders;
