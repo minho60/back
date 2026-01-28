@@ -353,3 +353,6 @@ ON m.member_id = o.member_id;
 
 -- 20. 주문 상태의 종류를 중복 없이(distinct) 조회하시오.
 SELECT DISTINCT status FROM  orders;
+
+-- 21. board 테이블의 열(column)을 확인하시오.
+SHOW COLUMNS FROM board;
