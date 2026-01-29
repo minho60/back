@@ -1,4 +1,4 @@
-DROP TABLE member;
+member_backupageDROP TABLE member;
 DROP TABLE board;
 DROP TABLE product;
 /*
