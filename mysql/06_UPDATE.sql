@@ -105,7 +105,35 @@ WHERE point >= (
 SELECT AVG(point) AS avg_point FROM member; -- 620.000
 
 -- 12. 게시글을 2개 이상 작성한 작성자의 게시글 제목을 '다수작성자'로 수정하시오.
--- 13. VIP 회원의 주문 상태를 'VIP주문'으로 수정하시오.
+UPDATE board
+SET title='다수작성자2'
+WHERE writer IN (
+    SELECT writer 
+    FROM
+    (SELECT writer 
+    FROM board 
+    GROUP BY writer HAVING COUNT(*) >=2) AS temp
+);
+
+SELECT * FROM board;
+SELECT writer 
+FROM board 
+GROUP BY writer HAVING COUNT(*) >=2;
+
+-- 13. 우수 회원의 주문 상태를 'VIP주문'으로 수정하시오.
+SELECT * FROM orders;
+UPDATE orders
+SET status = 'VIP주문'
+WHERE member_id IN(
+    SELECT member_id 
+    FROM(
+        SELECT member_id 
+        FROM member 
+        WHERE grade IN ('우수회원')) AS temp
+);
+
+SELECT member_id FROM member WHERE grade IN ('우수회원');
+
 
 -- 14. 회원 ID 가1인 포인트를 1000으로, 등급을 TOP으로 수정하시오.
 UPDATE member
