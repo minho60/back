@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* 헤더 */
+#header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    overflow: hidden;
+}
+#header::after {
+    content: "";
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    transition: 0.5s;
+    border-top: 1px solid #f1f1f1;
+}
+#header:hover::after {
+    height: 250px;
+}
+
+#header a {
+    color: #333;
+}
+#header .container {
+    position: relative;
+    padding: 0 50px;
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 로고 */
+/* 글로벌 내비게이션바(GNB) */
+#gnb {
+    align-self: flex-start;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 33px;
+}
+
+/* 1depth: Main Menu */
+#header .main {
+    max-width: 900px;
+    display: flex;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+#header .main li {
+    width: 150px;
+}
+
+/* 메인 메뉴 하단 바 */
+#header .main > li > a {
+    display: inline-block;
+}
+
+#header .main > li > a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    /* margin: auto; */
+    /* border-bottom: 3px solid red; */
+    /* transform: scaleX(0); */
+    transition: 0.3s;
+}
+#header .main li a:hover::after {
+    /* transform: scaleX(1); */
+    width: 100%;
+}
+#header .main a:hover {
+    color: var(--main-color);
+}
+
+/* 2depth: Sub Menu */
+#header .sub {
+    font-size: 1.6rem;
+    line-height: 2;
+    font-weight: 400;
+    margin-top: 45px;
+}
+/* a태그 글자색은 반드시 a태그에 직접 지정한다. */
+#header .sub a {
+    color: #333;
+}
+#header .sub a:hover {
+    text-decoration: underline;
+}
+/* SNS,로그인,회원가입 */
+#header .util a {
+    vertical-align: middle;
+    margin-left: 16px;
+}
+#header .youtube:hover {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../assets/img/btn_youtube.png);
+    text-indent: -9999px;
+}
+#header .util a:nth-of-type(2)::before {
+    display: inline-block;
+    content: "·";
+    margin-right: 16px;
+    transform:scale(2)
+}

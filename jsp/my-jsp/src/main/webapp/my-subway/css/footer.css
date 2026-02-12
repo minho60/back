@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* typo */
+footer {
+    /* function(arguments) */
+    /* 함수(인자) */
+    color: var(--gray5);
+}
+footer a {
+    color: var(--white-color);
+}
+footer .inquiry h2 {
+    color: var(--gray3);
+    font-size: 50px;
+}
+footer .inquiry .tel-area p {
+    font-size: 26px;
+    font-weight: 100;
+}
+footer .inquiry .tel-area a {
+    color: var(--gray3);
+    font-size: 50px;
+    font-weight: 700;
+}
+footer .inquiry .con-btn a {
+    font-size: 20px;
+}
+
+/* inquiry: 문의 */
+footer .inquiry {
+    padding: 50px;
+}
+footer .inquiry .inner {
+    display: flex;
+    justify-content: space-between;
+    width: 1215px;
+    margin: auto;
+}
+footer .inquiry a {
+    display: block;
+    width: 100%;
+    color: #333;
+}
+footer .inquiry .inner div {
+    float: left; 
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-indent: -9999px;
+    margin-right: 30px;
+}
+footer .inquiry .inner strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+}
+footer .inquiry .inner span {
+    color: #999;
+}
+
+/* 아이콘 스프라이트(sprite) 이미지 배경으로 삽입 */
+footer .inquiry .inner div {
+    background:#F6F6F6 url(../assets/img/icon_quickmenu.png) no-repeat;
+}
+footer .inquiry .inner a:nth-of-type(2) div {
+    background-position: -70px 0px;
+}
+footer .inquiry .inner a:nth-of-type(3) div {
+    background-position: -140px 0px;
+}
+footer .inquiry .inner a:nth-of-type(4) div {
+    background-position: -210px 4px;
+}
+
+
+/* info: 정보 */
+footer {
+    color: #777;
+}
+footer a {
+    color: #777;
+}
+footer .person {
+    color: #ccc;
+    font-weight: 700;
+}
+footer .info {
+    background: #222 url(../assets/img/logo_gray.png) no-repeat 80px 70px;
+    padding: 50px 350px;
+}
+footer .bnb {
+    border-bottom: 1px solid #333;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+footer .bnb li {
+    margin-right: 16px;
+}
+footer .bnb li:not(:last-child)::after {
+    content: "|";
+    margin-left: 16px;
+}
+
+footer .info .inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    /* margin-left: 250px; */
+}
+
+footer .util-box {
+    display: flex;
+}
+footer .left-info ul {
+    display: flex;
+}
+
+footer .sns li a {
+    display: block;
+    background: url(../assets/img/icon_sns_instar.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    transform: translateY(-15px) scale(0.7);
+}
+footer .sns li a:hover {
+    background-position: -50px 0;
+}
+footer .sns li:nth-of-type(2) a {
+    background-image: url(../assets/img/icon_sns_facebook.png);    
+}

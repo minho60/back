@@ -1,0 +1,310 @@
+@charset "utf-8"; /* @ch */
+@import url(common.css); /* @i */
+@import url(header.css);
+@import url(footer.css);
+
+/* typo */
+/* section1 area */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+#sec1 {
+    color: var(--white-color);
+}
+
+#sec1 h2 {
+    font-size: 60px;
+}
+#sec1 p {
+    font-size: 24px;
+}
+#sec1 span:first-of-type {
+    font-size: 40px;
+}
+#sec1 span:last-of-type {
+    font-size: 17px;
+}
+#sec1 .counter div {
+    color: var(--sub-color);
+}
+
+/* section2 area */
+
+.card-title {
+    font-size: 22px;
+    color: #333;
+    line-height: 27px;
+}
+
+.phone-number {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 24px;
+    color: #0f2244;
+    font-weight: bold;
+}
+
+/* section3 area */
+#sec3 .intro {
+    color: var(--white-color);
+}
+#sec3 .intro a {
+    color: var(--white-color);
+}
+#sec3 .intro h2 {
+    font-weight: var(--fwm);
+    /* 단어별로 첫 글자를 대문자 */
+    text-transform: capitalize; /* ttc */
+    /* 모두 소문자 */
+    text-transform: lowercase; /* ttl */
+    /* 모두 대문자 */
+    text-transform: uppercase; /* tt */
+    line-height: 1;
+}
+#sec3 .intro h2 span:nth-of-type(1) {
+    font-size: 100px;
+    letter-spacing: 7px;
+}
+#sec3 .intro h2 span:nth-of-type(2) {
+    font-size: 80px;
+    letter-spacing: 8px; /* ls */
+}
+#sec3 .intro h2 span:nth-of-type(3) {
+    font-size: 45px;
+    letter-spacing: 5px;
+}
+#sec3 .intro p:first-of-type {
+    font-size: 28px;
+    line-height: 1;
+}
+#sec3 .intro p:first-of-type b {
+    font-weight: var(--fwm);
+}
+#sec3 .intro p:first-of-type strong {
+    font-weight: var(--fwm);
+}
+
+.card-details p {
+    /* p는 위아래 기본 마진이 있다. 폰트 크기의 1em */
+    margin: 0;
+}
+
+/* header */
+/* section */
+/* section common(공통) */
+.sec {
+    position: relative;
+    height: 100vh;
+}
+.ele-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* section1 area */
+/* #sec1 * {
+    outline: 1px solid red;
+} */
+#sec1 {
+    background-color: lightgreen;
+}
+#sec1 .vid {
+    position: absolute; /* poa */
+    width: 100%;
+    height: 100%;
+    /* 박스 크기를 벋어나는 콘텐츠(비디오) 영역을 숨김 */
+    /* overflow: hidden; */
+}
+
+#sec1 .container {
+    /* 너비가 100% 이지만, 최대 크기가 1330px */
+    width: 100%; /* w100p */
+    max-width: 1330px; /* maw1330 */
+    /* 인라인 요소(텍스트 포함) 가로 정렬 */
+    text-align: center; /* tac */
+}
+#sec1 .container p {
+    margin: 20px 0 100px; /* m40-0-120 */
+}
+#sec1 .counter {
+    display: flex; /* df */
+    justify-content: center;
+}
+#sec1 .counter div {
+    width: 307px;
+    /* height와 line-height가 같으면 텍스트가 수직 중앙 배치된다. 단, 한 줄 텍스트일때만 가능 */
+    height: 44px;
+    line-height: 44px; /* lh44px */
+    background-color: rgba(255, 217, 0, 0.6);
+    border-radius: 20px; /* bdrr */
+    margin: 10px;
+}
+#sec1 .counter li:nth-of-type(2) div {
+    background-color: rgba(0, 145, 50, 0.6);
+    color: #fff;
+}
+
+/* section2 area */
+#sec2 {
+    background: url(../assets/img/bg_content.gif);
+}
+
+#sec2 .card-list {
+    display: flex; /* df */
+    gap: 20px; /* g20 */
+}
+
+/* card-container */
+/* 배경색: bgc */
+.card-container {
+    width: 340px;
+    color: #fff;
+    /* overflow: hidden; */
+    /* margin: 20px; */
+}
+.card-container h3 {
+    color: #fff;
+    font-weight: normal;
+    margin: 50px 0 20px;
+}
+.card-container a {
+    color: #fff;
+}
+.card-container p:last-of-type {
+    margin-top: 16px;
+}
+.card-container:nth-of-type(3) h3 {
+    color: #333;
+}
+.card-container:nth-of-type(1) {
+    background-color: #01a5e2;
+    border-radius: 30px;
+    border-bottom-right-radius: 0px;
+}
+.card-container:nth-of-type(2) {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #ff8300;
+}
+.card-container:nth-of-type(3) {
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #fff;
+    color: #333;
+}
+
+.card-image-wrapper {
+    height: 268px;
+    overflow: hidden;
+}
+.card-container:nth-of-type(1) .card-image-wrapper {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.card-container:nth-of-type(2) .card-image-wrapper {
+    border-top-left-radius: 30px;
+}
+.card-container:nth-of-type(3) .card-image-wrapper {
+    background: #ffce32;
+    border-top-right-radius: 30px;
+    padding: 48px 24px;
+}
+.card-container:nth-of-type(3) a {
+    color: #333;
+}
+
+.card-image-wrapper img {
+    transition: 0.3s; /* trs, 0.3초 */
+}
+.card-image-wrapper:hover img {
+    /* transform: scale(너비, 높이), 기본값 1 */
+    transform: scale(1.2, 1.2); /* trf:s */
+}
+
+.card-content {
+    position: relative;
+    /* 마진 겹침 해결!
+        -> 마진이 부모 바깥으로 지정되는 것을 방지
+     */
+    display: flow-root;
+}
+
+/* 배지+링크 */
+.tag-badge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    display: inline-block;
+    padding: 4px 16px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50px;
+}
+.card-container:nth-of-type(3) .tag-badge {
+    border-color: rgba(150, 148, 148, 0.5);
+}
+
+/* 카드 UI 정보 */
+.card-body {
+    margin: 0 45px 120px;
+}
+
+/* 최신글 */
+.latest li {
+    padding: 8px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px dotted #333;
+}
+.latest li a:hover {
+    text-decoration: underline;
+}
+
+/* section3 area */
+#sec3 {
+    /* 
+        배경 이미지 +
+        패럴랙스 스크롤링(Parallax Scrolling)
+            - 웹사이트나 게임 등에서 배경 레이어는 느리게, 전경 레이어는 빠르게 움직여 입체감과 깊이감을 주는 디자인 기법입니다. 
+    */
+    background-attachment: fixed; /* bga */
+    background: url(../assets/img/bg.jpg) no-repeat 50% /
+        cover fixed;
+}
+#sec3 .intro {
+    position: absolute;
+    left: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 520px;
+    text-align: right; /* tar */
+}
+#sec3 .intro h2 span {
+    display: block;
+}
+#sec3 .intro p:first-of-type {
+    margin: 48px 0 16px; /* m48-0-16 */
+}
+#sec3 .intro a {
+    display: inline-block;
+    border: 2px solid var(--white-color); /* bd */
+    border-radius: 5px; /* bdrr */
+    margin-top: 28px;
+    padding: 6px 24px;
+}
+#sec3 .intro a:hover {
+    background: var(--white-color);
+    color: #222;
+    text-decoration: underline;
+    transition: 0.7s; /* trs, 전환 */
+}
+#sec3 .product {
+    position: absolute;
+    left: 890px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 880px;
+    height: 550px;
+}

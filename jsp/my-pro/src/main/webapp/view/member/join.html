@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/join.css">
+    <title>SUBWAY 써브웨이</title>
+</head>
+
+<body>
+    <!-- 타깃: https://www.subway.co.kr/ -->
+    <!-- 밴치마킹: https://www.starbucks.co.kr/whats_new/notice_list.do -->
+    <!-- header area -->
+    <header id="header">
+        <div class="container">
+            <!-- 로고 -->
+            <h1 class="logo"><a href="../index.html"><img src="../assets/img/logo_w.png" alt="써브웨이로 이동하기"></a></h1>
+            <!-- 내비게이션: GNB -->
+            <nav id="gnb">
+                <ul class="main">
+                    <li><a href="#">메뉴소개</a>
+                        <ul class="sub">
+                            <li><a href="#">샌드위치</a></li>
+                            <li><a href="#">램·기타</a></li>
+                            <li><a href="#">샐러드</a></li>
+                            <li><a href="#">아침메뉴</a></li>
+                            <li><a href="#">스마일 썸</a></li>
+                            <li><a href="#">단체메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용방법</a>
+                        <ul class="sub">
+                            <li><a href="#">써브웨이 이용방법</a></li>
+                            <li><a href="#">단체메뉴 이용방법</a></li>
+                            <li><a href="#">신선한 재료 소개</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">새소식</a>
+                        <ul class="sub">
+                            <li><a href="#">이벤트·프로모션</a></li>
+                            <li><a href="notice.html">뉴스·공지사항</a></li>
+                            <li><a href="#">광고영상</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">써브웨이</a>
+                        <ul class="sub">
+                            <li><a href="#">써브웨이 역사</a></li>
+                            <li><a href="#">써브웨이 약속</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">가맹점</a>
+                        <ul class="sub">
+                            <li><a href="#">써브웨이 프랜차이즈</a></li>
+                            <li><a href="#">가맹관련 FAQ</a></li>
+                            <li><a href="#">가맹신청·문의</a></li>
+                            <li><a href="#">지사안내</a></li>
+                            <li><a href="#">사업설명회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">온라인 주문</a>
+                        <ul class="sub">
+                            <li><a href="#">APP 주문</a></li>
+                            <li><a href="#">단체주문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="util">
+                <!-- sns -->
+                <a href="#" class="youtube">SNS</a>
+                <a href="login.html">로그인</a>
+                <a href="join.html">회원가입</a>
+            </div>
+        </div><!-- .container -->
+    </header>
+
+    <!-- section area -->
+    <!-- join section -->
+    <section class="join">
+        <div class="join-inner">
+
+            <h2 class="join-title">회원가입</h2>
+            <p class="join-desc">
+                써브웨이 회원이 되시면 다양한 혜택과 이벤트를 만나보실 수 있습니다.
+            </p>
+
+            <form class="join-form">
+
+                <!-- 아이디 -->
+                <div class="form-row">
+                    <label for="userid">아이디</label>
+                    <input type="text" id="userid" placeholder="아이디 입력 (4~16자)">
+                    <button type="button" class="btn-sub">중복확인</button>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form-row">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호 입력 (영문/숫자/특수문자)">
+                </div>
+
+                <!-- 비밀번호 확인 -->
+                <div class="form-row">
+                    <label for="password2">비밀번호 확인</label>
+                    <input type="password" id="password2" placeholder="비밀번호 재입력">
+                </div>
+
+                <!-- 휴대폰 -->
+                <div class="form-row">
+                    <label for="phone">휴대폰번호</label>
+                    <input type="text" id="phone" placeholder="01012345678">
+                    <button type="button" class="btn-sub">인증번호</button>
+                </div>
+
+                <!-- 인증번호 -->
+                <div class="form-row">
+                    <label for="code">인증번호</label>
+                    <input type="text" id="code" placeholder="인증번호 6자리">
+                </div>
+
+                <!-- 약관 -->
+                <div class="agree">
+                    <label>
+                        <input type="checkbox">
+                        <span>이용약관 및 개인정보처리방침에 동의합니다.</span>
+                    </label>
+                </div>
+
+                <!-- 버튼 -->
+                <div class="btn-area">
+                    <button type="submit" class="btn-join">회원가입</button>
+                    <button type="button" class="btn-cancel">취소</button>
+                </div>
+
+            </form>
+
+        </div>
+    </section><!-- //section -->
+
+    <!-- footer area -->
+    <footer>
+        <!-- inquiry: 문의 -->
+        <div class="inquiry">
+            <div class="inner">
+                <a href="#">
+                    <div>아이콘1</div>
+                    <strong>프랜차이즈</strong>
+                    <span>개설절차/투자비용 정보</span>
+                </a>
+                <a href="#">
+                    <div>아이콘2</div>
+                    <strong>지사안내</strong>
+                    <span>수도권/지방 지사정보</span>
+                </a>
+                <a href="#">
+                    <div>아이콘3</div>
+                    <strong>광고영상</strong>
+                    <span>TV광고/동영상</span>
+                </a>
+                <a href="#">
+                    <div>아이콘4</div>
+                    <strong>고객문의</strong>
+                    <span>자주하는 질문/1:1문의</span>
+                </a>
+            </div><!-- .inner -->
+        </div><!-- .inquiry -->
+        <!-- info: 정보 -->
+        <div class="info">
+            <div class="inner">
+                <div class="left-info">
+                    <div class="util-box">
+                        <!-- bnb: bottom navigation bar -->
+                        <ul class="bnb">
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#" class="person">개인정보처리방침</a></li>
+                            <li><a href="#">썹 카드 &amp; 썹 포인트 이용약관</a></li>
+                            <li><a href="#">점주관리자</a></li>
+                        </ul>
+                        <ul class="sns">
+                            <li><a href="#">인스타그램</a></li>
+                            <li><a href="#">페이스북</a></li>
+                        </ul>
+                    </div>
+                    <div class="com-info">
+                        <p>서울시 서초구 강남대로 535 프린스빌딩 15층 대표 : INSOO CHO(인수조) 전화: <a href="tel:02-797-5036">02-797-5036</a>
+                            사업자등록번호 : 101-84-04143</p>
+                    </div>
+                    <p>SUBWAY® is a Registered Trademark of Subway IP LLC. © 2026 Subway IP LLC. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="fs">관련사이트 열기</div>
+            </div><!-- .inner -->
+        </div><!-- .info -->
+    </footer>
+</body>
+
+</html>
