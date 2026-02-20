@@ -106,9 +106,12 @@
 	<ul>
 	<c:forEach var="fruit" items="${fruits2}" varStatus="st">
 		<li>${st.index}${fruit}</li>
+		<%--
 		<li>${st.count}${fruit}</li>
 		<li>${st.first}${fruit}</li>
 		<li>${st.last}${fruit}</li>
+		
+		 --%>
 	</c:forEach>	
 	</ul>
 	
