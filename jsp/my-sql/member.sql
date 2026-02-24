@@ -19,7 +19,7 @@ INSERT INTO user (userid, userpw) VALUES
 ('minho', 'minho1234'),
 ('jiyoung', 'jy2025'),
 ('test01', 'test1234'),
-('guest', 'guest0000');
+('guesuseridt', 'guest0000');
 
 -- 조회
 SELECT*FROM user;
