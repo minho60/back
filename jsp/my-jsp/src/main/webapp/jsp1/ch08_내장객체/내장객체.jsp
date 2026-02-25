@@ -48,6 +48,27 @@
 	<p>남은 Buffer의 크기 : ${remain}byte</p>
 	<p>현재 Buffer의 사용량 : ${total-remain}byte</p>
 	
+	<h2>session</h2>
+	<%--
+			session 내장 객체
+				- 사용자(브라우저) 단위로 상태 유지
+				1. 로그인 정보 저장
+				2. 장바구니
+				3. 사용자 권한
+	--%>
+
+	<%-- 데이터 저장 --%>
+	<% session.setAttribute("nick", "길동"); %>
+	별명: <%= session.getAttribute("nick") %>
+	<% String str =(String) session.getAttribute("nick"); %><br>
+	<%= str %><br>
+	
+	<%-- JSTL--%>
+	<c:set var="nick" value="길동" scope="session"/>
+	
+	<%-- EL --%>
+	별명(EL): ${sessionScope.nick}
+	
 	
 	<%--<% response.sendRedirect("ex03_main.jsp"); --%>
 	
