@@ -20,28 +20,22 @@ public class DBConnectionMgr {
     // - allowPublicKeyRetrieval=true : 암호화된 비밀번호 전송을 위한 공개키 요청 허용
     // - characterEncoding=UTF-8 : 한글 깨짐 방지를 위한 문자 인코딩 설정
 	
-	// 서버 테스트
-//    private static final String URL = "jdbc:mysql://mysql-minho.alwaysdata.net:3306/minho_db?"
-//    		+ "useSSL=false"
-//    		+ "&serverTimezone=UTC&"
-//    		+ "allowPublicKeyRetrieval=true&"
-//    		+ "characterEncoding=UTF-8";
-	
-	// 로컬 호스트
-    private static final String URL = "jdbc:mysql://localhost:3306/testdb?"
+	// 서버
+	private static final String URL = "jdbc:mysql://mysql-minho.alwaysdata.net:3306/minho_db?"
     		+ "useSSL=false"
     		+ "&serverTimezone=UTC&"
     		+ "allowPublicKeyRetrieval=true&"
     		+ "characterEncoding=UTF-8";
+	// 로컬
+//    private static final String URL = "jdbc:mysql://localhost:3306/testdb?"
+//    		+ "useSSL=false"
+//    		+ "&serverTimezone=UTC&"
+//    		+ "allowPublicKeyRetrieval=true&"
+//    		+ "characterEncoding=UTF-8";
     
     // 2. 데이터베이스 계정 정보
-    
-   
-    // 서버, 로컬 아이디 패스워드 통합  
     private static final String USER = "minho";      // MySQL 사용자 계정
     private static final String PASSWORD = "zjajj899"; // 해당 계정의 비밀번호
-
-
 
     /**
      * [데이터베이스 연결 객체 획득 메서드]

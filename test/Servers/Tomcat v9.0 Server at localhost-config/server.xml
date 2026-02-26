@@ -162,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="member.ex01.idpw" path="/member.ex01.idpw" reloadable="true" source="org.eclipse.jst.jee.server:member.ex01.idpw"/><Context docBase="board.ex01.list" path="/board.ex01.list" reloadable="true" source="org.eclipse.jst.jee.server:board.ex01.list"/><Context docBase="login.ex01" path="/login.ex01" reloadable="true" source="org.eclipse.jst.jee.server:login.ex01"/></Host>
+      <Context docBase="member.ex01.idpw" path="/member.ex01.idpw" reloadable="true" source="org.eclipse.jst.jee.server:member.ex01.idpw"/><Context docBase="board.ex01.list" path="/board.ex01.list" reloadable="true" source="org.eclipse.jst.jee.server:board.ex01.list"/><Context docBase="login.ex01" path="/login.ex01" reloadable="true" source="org.eclipse.jst.jee.server:login.ex01"/><Context docBase="member.ex02.bcrypt" path="/member.ex02.bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:member.ex02.bcrypt"/><Context docBase="login.ex02.bcrypt" path="/login.ex02.bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:login.ex02.bcrypt"/></Host>
     </Engine>
   </Service>
 </Server>
