@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8005" shutdown="SHUTDOWN">
+ --><Server port="9005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -62,7 +62,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="9090" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -162,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="member.ex01.idpw" path="/member.ex01.idpw" reloadable="true" source="org.eclipse.jst.jee.server:member.ex01.idpw"/><Context docBase="board.ex01.list" path="/board.ex01.list" reloadable="true" source="org.eclipse.jst.jee.server:board.ex01.list"/><Context docBase="login.ex01" path="/login.ex01" reloadable="true" source="org.eclipse.jst.jee.server:login.ex01"/><Context docBase="member.ex02.bcrypt" path="/member.ex02.bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:member.ex02.bcrypt"/><Context docBase="login.ex02.bcrypt" path="/login.ex02.bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:login.ex02.bcrypt"/></Host>
+      <Context docBase="member.ex01.idpw" path="/member.ex01.idpw" reloadable="true" source="org.eclipse.jst.jee.server:member.ex01.idpw"/><Context docBase="login.ex01" path="/login.ex01" reloadable="true" source="org.eclipse.jst.jee.server:login.ex01"/><Context docBase="member.ex02.bcrypt" path="/member.ex02.bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:member.ex02.bcrypt"/><Context docBase="login.ex02.bcrypt" path="/login.ex02.bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:login.ex02.bcrypt"/><Context docBase="board.ex01" path="/board.ex01" reloadable="true" source="org.eclipse.jst.jee.server:board.ex01"/><Context docBase="board.ex02.recent" path="/board.ex02.recent" reloadable="true" source="org.eclipse.jst.jee.server:board.ex02.recent"/><Context docBase="board.ex03.paging" path="/board.ex03.paging" reloadable="true" source="org.eclipse.jst.jee.server:board.ex03.paging"/><Context docBase="board.ex04.search" path="/board.ex04.search" reloadable="true" source="org.eclipse.jst.jee.server:board.ex04.search"/><Context docBase="board.ex05.read" path="/board.ex05.read" reloadable="true" source="org.eclipse.jst.jee.server:board.ex05.read"/></Host>
     </Engine>
   </Service>
 </Server>

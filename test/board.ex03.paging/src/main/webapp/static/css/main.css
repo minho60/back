@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import URL("common.css");
+
+/* index.jsp */
+
+
+table {
+	width: 400px;
+	border-collapse: collapse;
+}
+th {
+	border-bottom: 1px double #ccc;
+}
+td {
+	border-bottom: 1px dotted #ccc;
+}

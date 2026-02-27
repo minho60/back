@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+@import URL("common.css");
+
+
+table, th, td {
+	border: 1px solid;
+}
+
+.pagination {
+	margin-top: 20px;
+}
+
+.pagination a, .pagination strong {
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	margin: 0 2px;
+	text-decoration: none;
+	color: #333;
+}
+
+.pagination strong {
+	background-color: #008b47;
+	color: white;
+	border-color: #008b47;
+}
