@@ -45,19 +45,23 @@ DELETE FROM `testdb`.`users` WHERE useridIN ('minho', 'guest');
 
 
 
--- ex02 회원가입 테이블 생성
+DROP TABLE IF EXISTS member;
+
 CREATE TABLE `member` (
-	  `phone` varchar(30),
-	  `name` varchar(20),
+	  `name` varchar(20) NOT NULL,
 	  `gender` char(1),
+	  `phone` varchar(20),
 	  `id` varchar(50) PRIMARY KEY,
-	  `pwd` varchar(100) NOT NULL,
-	  `email` varchar(30),
-	  `zipcode` char(7),
+	  `pwd` varchar(100),
+	  `email` varchar(50) NOT NULL,
+	  `zipcode` char(5),
 	  `address1` varchar(60),
 	  `address2` varchar(60),
 	  `hobby` char(5),
-	  `job` varchar(30)
+	  `job` varchar(15),
+	  `sns_type` varchar(20),
+	  `sns_id` varchar(100),
+	  `regdate` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO member (phone, name, gender, id, pwd, email, zipcode, address1, address2, hobby, job) VALUES
