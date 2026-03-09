@@ -69,7 +69,7 @@ public class MemberServlet extends HttpServlet {
             
             // Redirect 처리: 가입 성공 후 페이지를 새로고침했을 때 중복 가입을 방지하기 위해 주소를 강제로 변경합니다.
             // 클라이언트의 웹 브라우저에게 "이 경로로 다시 접속해!"라고 명령하는 것과 같습니다.
-            response.sendRedirect(request.getContextPath() + "/view/member/member_pro.jsp");
+            response.sendRedirect(request.getContextPath() + "/view/member/success.jsp");
         } else {
             /* [가입 실패 시]
              * 응답 타입을 HTML 및 UTF-8로 설정하여 자바스크립트가 제대로 실행되도록 합니다.

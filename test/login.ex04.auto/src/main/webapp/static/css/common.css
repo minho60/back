@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body{
+	background:#fff;
+}
+
+/*footer.jsp*/
+footer{
+	height:100%;
+	border-top: 1px solid rgbo(0,0,0,.2);
+
+}
+
+table{
+	width:800px;
+	border-collapse:collapse;
+}
+
+table, th, td{
+	border: 1px solid #555;
+}
+
+th{
+	background: #ccc;
+}

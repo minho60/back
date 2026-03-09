@@ -44,13 +44,12 @@ SELECT*FROM users;
 DELETE FROM `testdb`.`users` WHERE useridIN ('minho', 'guest');
 
 
-
 DROP TABLE IF EXISTS member;
 
 CREATE TABLE `member` (
 	  `name` varchar(20) NOT NULL,
 	  `gender` char(1),
-	  `phone` varchar(20),
+	  `phone` varchar(11),
 	  `id` varchar(50) PRIMARY KEY,
 	  `pwd` varchar(100),
 	  `email` varchar(50) NOT NULL,
@@ -63,6 +62,9 @@ CREATE TABLE `member` (
 	  `sns_id` varchar(100),
 	  `regdate` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE member ADD COLUMN session_key VARCHAR(100);    -- 보안 토큰 저장
+ALTER TABLE member ADD COLUMN session_limit TIMESTAMP;     -- 토큰 만료 시간
 
 INSERT INTO member (phone, name, gender, id, pwd, email, zipcode, address1, address2, hobby, job) VALUES
 ('010-1111-1111','김철수','M','kim','pass123','kim@example.com','12345','서울특별시 강남구','역삼동 101-1','인터넷','학생'),
@@ -148,9 +150,9 @@ INSERT INTO board (userid, subject, content, regdate, readcount, pass) VALUES
 ('subway_love','샌드위치 추천 5','오늘 먹은 샌드위치 후기입니다.','2026-01-02',3,'subway123'),
 ('fitness_lee','헬스 기구 리뷰 5','새로 산 헬스 기구 사용 후기 올립니다.','2026-01-03',2,'fitpass'),
 ('bread_king','허니브레드 후기 2','아침에 먹으니 든든합니다.','2026-01-04',12,'bread123'),
-('cookie_monster','쿠키 레시피 공유 5','집에서 만든 쿠키가 맛있어요.','2026-01-05',4,'cookiepwd'),
+('cookie_monster','쿠키 레시피 공유 5','집에서 만든 쿠키가 맛있어요.','2026-01-05',4,'cookiepwmemberd'),
 
-('kim','점심 메뉴 추천 6','오늘 점심은 뭘 먹을까요?','2026-01-06',5,'pass123'),
+('kim','점심 메member뉴 추천 6','오늘 점심은 뭘 먹을까요?','2026-01-06',5,'pass123'),
 ('admin','공지사항 6','사이트 이용 안내 공지입니다.','2026-01-07',9,'adminpass'),
 ('minho','책 리뷰 6','최근 읽은 책 후기 공유합니다.','2026-01-08',2,'minhopwd'),
 ('jiyoung','운동 계획 6','이번 주 운동 계획입니다.','2026-01-09',6,'jy1234'),

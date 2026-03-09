@@ -31,6 +31,6 @@ public class MemberIdCheckServlet extends HttpServlet {
         
         // 5. 뷰(JSP)로 포워딩 (URL은 변하지 않고 내부적으로 이동)
         // WEB-INF 내부에 있어도 포워딩으로는 접근 가능
-        request.getRequestDispatcher("/view/member/member_idcheck.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/member/memberidcheck.jsp").forward(request, response);
     }
 }

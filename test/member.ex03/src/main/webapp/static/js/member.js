@@ -133,7 +133,7 @@ function idCheck(idValue) {
         return;
     }
     // 서블릿 경로로 아이디 값을 쿼리 스트링으로 전달하며 팝업 오픈
-    const url = "/member.ex02/member/idcheck?id=" + idValue;
+    const url = path + "/member/idcheck?id=" + idValue;
     window.open(url, "IDCheck", "width=350,height=250");
 }
 

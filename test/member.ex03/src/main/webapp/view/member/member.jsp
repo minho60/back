@@ -105,7 +105,9 @@
 			<button id="memberBtn" disabled>회원가입</button>
 		</form>
 	</section>
-
+	<script>
+		const path = "${pageContext.request.contextPath}";
+	</script>
 	<script src="https://t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/member.js"></script>
 </body>
