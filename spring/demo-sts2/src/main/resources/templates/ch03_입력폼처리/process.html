@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>등록 완료</title>
+   	<link rel="stylesheet" th:href="@{/ch03/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="success-msg">✅ 등록이 완료되었습니다!</h2>
+    <hr>
+    
+    <div class="data-box">
+        <p><strong>이름:</strong> <span th:text="${user.name}">이름 없음</span></p>
+        <p><strong>나이:</strong> <span th:text="${user.age}">0</span>세</p>
+        
+        <p>
+            <strong>구분:</strong> 
+            <span th:if="${user.age >= 20}" style="color: blue;">성인 회원</span>
+            <span th:unless="${user.age >= 20}" style="color: red;">미성년 회원</span>
+        </p>
+    </div>
+
+    <br>
+    <a th:href="@{/ch03/form/input}">새로운 정보 입력하기</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.11'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'kr.co.dodram'
+version = '0.0.1-SNAPSHOT'
+description = 'Demo project for Spring Boot'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+  // [JSP 지원 설정]
+    // 스프링 부트 내장 톰캣이 JSP 파일을 자바 코드로 컴파일할 수 있게 해주는 필수 라이브러리
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    
+    // JSP에서 JSTL(c:forEach 등) 문법을 사용하기 위한 API 및 실제 구현체
+    // (Spring Boot 3.x는 Jakarta EE 규격을 따르므로 'jakarta' 패키지 사용 필수)
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
+    
+    // [Spring Boot 핵심 스타터]
+    // 스프링 MVC를 이용한 웹 개발(REST, 톰캣 서버 포함)을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    
+    // JDBC(JdbcTemplate 포함)와 데이터 커넥션 풀(HikariCP) 설정을 지원
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    
+    // [개발 편의 기능]
+    // Getter, Setter 등을 어노테이션으로 자동 생성 (컴파일 시에만 사용)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    // 코드 수정 시 서버를 자동으로 재시작해주는 개발용 도구
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    
+    // [런타임 및 테스트]
+    // MySQL 데이터베이스와의 연결을 담당하는 드라이버 (실행 시에만 필요)
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    
+    // JUnit 등을 활용한 단위 테스트 환경 구축
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

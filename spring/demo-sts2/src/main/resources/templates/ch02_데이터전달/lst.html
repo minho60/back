@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 목록</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .adult { color: blue; }
+        .minor { color: red; }
+    </style>
+</head>
+<body>
+	<!--/*
+	<c:forEach var="아이템" items="${아이템}">	
+	<tr th:each="아이템, 상태변수: ${아이템들}">
+		상태변수.index: 0부터
+		상태변수.count: 1부터
+		상태변수.size:  아이템 총 수 
+		상태변수.even:  짝수 이면 true
+		상태변수.add:   홀수이면 true
+	
+	*/-->
+	
+    <h1>전체 회원 목록</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>나이</th>
+                <th>구분</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user, stat : ${users}">
+                <td th:text="${stat.count}">1</td> <td th:text="${user.name}">이름</td>
+                <td th:text="${user.email}">이메일</td>
+                <td th:text="${user.age}">0</td>
+                <td>
+                    <span th:if="${user.age >= 20}" class="adult">성인</span>
+                    <span th:unless="${user.age >= 20}" class="minor">미성년자</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

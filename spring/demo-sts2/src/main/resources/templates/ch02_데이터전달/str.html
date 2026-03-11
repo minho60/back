@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+	
+    <h1>안녕하세요, <span th:text="${username}">사용자</span>님!</h1>
+    
+    <p th:text="${greeting}">기본 메시지입니다.</p>
+    
+    <hr>
+    <p>현재 서버에서 보낸 데이터가 위 문구들에 적용되었습니다.</p>
+</body>
+</html>
