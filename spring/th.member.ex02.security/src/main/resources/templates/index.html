@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>써브웨이</title>
+	<link th:href="@{/css/popup.css}" rel="stylesheet">
+</head>
+<body>
+	
+    <h1>메인 페이지</h1>
+
+    <div sec:authorize="isAuthenticated()">
+        <p>
+            <strong th:text="${session.userName}">사용자</strong>님, 환영합니다!<br>
+            
+            (정보: <span sec:authentication="name">ID</span>님 접속 중)
+        </p>
+
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <button type="submit">로그아웃</button>
+        </form>
+    </div>
+
+    <div sec:authorize="isAnonymous()">
+        <p>로그인이 필요합니다.</p>
+        <a th:href="@{/member/login}">로그인</a>
+        <a th:href="@{/member/join}">회원가입</a>
+    </div>
+	
+
+	<section id="section1">
+	    <h1>섹션1 (스크롤용 배경)</h1>
+	</section>
+
+	<div id="layerPopup" class="popup-wrap">
+	    <div class="popup-box">
+	        <h2>접시 택배 수거 접수</h2>
+	        <p class="date">7일간 보지 않기 테스트 중</p>
+	        <button class="submit-btn">접수하기</button>
+
+	        <div class="popup-footer">
+	            <label>
+	                <input type="checkbox" id="weekClose">
+	                일주일간 그만 보기
+	            </label>
+	            <button id="closePopup">닫기</button>
+	        </div>
+	    </div>
+	</div>
+
+	
+    <script th:src="@{/js/success.js}"></script>
+    <script th:src="@{/js/popup.js}"></script>
+</body>
+</html>

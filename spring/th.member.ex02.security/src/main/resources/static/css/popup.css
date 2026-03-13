@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body, h1 { margin: 0; }
+     #section1 { height: 2000px;  }
+     .popup-wrap {
+         display: none; position: fixed; top: 20%; left: 30%;
+         transform: translate(-50%, -50%); z-index: 1000;
+     }
+     .popup-box {
+         width: 320px; background: #fff; border: 10px solid #ffc400;
+         padding: 20px; text-align: center; box-sizing: border-box;
+     }
+     .submit-btn {
+         background: #00a83c; color: #fff; border: none;
+         padding: 10px 22px; border-radius: 20px; cursor: pointer;
+     }
+     .popup-footer {
+         margin-top: 20px; display: flex; justify-content: space-between;
+         align-items: center; font-size: 12px;
+     }
+     .popup-footer button { background: none; border: none; cursor: pointer; text-decoration: underline; }

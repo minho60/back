@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 폼 처리</title>
+</head>
+<body>
+<form th:action="@{/ch04/form/input}" th:object="${userForm}" method="post">
+    <div>
+        <label>이름:</label>
+        <input type="text" th:field="*{name}" th:errorclass="field-error">
+        <div th:errors="*{name}" style="color: red;">이름 관련 에러 메시지</div>
+    </div>
+    <div>
+        <label>나이:</label>
+        <input type="number" th:field="*{age}" th:errorclass="field-error">
+        <div th:errors="*{age}" style="color: red;">나이 관련 에러 메시지</div>
+    </div>
+    <button type="submit">등록하기</button>
+</form>
+</body>
+</html>
