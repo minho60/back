@@ -25,7 +25,7 @@ public class SecurityConfig {
                 // ★ [핵심] JSP 화면을 못 찾아서 에러가 나더라도 무한 루프를 돌지 않게 내부 이동을 허용!
                 .dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
                 // 기존 허용 경로들
-                .requestMatchers("/member/login", "/member/join", "/member/process", "/assets/**" , "/css/**", "/js/**", "/").permitAll()
+                .requestMatchers("/member/login", "/member/join", "/member/process", "/assets/**" , "/css/**", "/js/**", "/", "/main").permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form

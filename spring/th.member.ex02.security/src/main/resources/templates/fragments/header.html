@@ -5,12 +5,15 @@
     <title>header</title>
 </head>
 <body>
-	<div th:fragment="header">
+		<!--/*
+		<div th:replace="fragments/header :: header"></div>	
+		*/-->
+		<header th:fragment="header">
 	        <h1>
-	            <a th:href="@{/}">
+	            <a th:href="@{/main}">
 	                <img th:src="@{/assets/img/dodramlogo.svg}" alt="도드람">
 	            </a>
 	        </h1>
-	    </div>
+	    </header>
 </body>
 </html>
